@@ -1,40 +1,24 @@
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-    <!-- 侧边栏 -->
-    <aside class="lg:col-span-1 order-2 lg:order-1">
-      {% include sidebar.html %}
-    </aside>
-    
-    <!-- 主内容区 -->
-    <div class="lg:col-span-3 order-1 lg:order-2">
-      <h1 class="text-2xl md:text-3xl font-bold mb-6">最新笔记</h1>
-      
-      <!-- 笔记列表 -->
-      <div class="space-y-6">
-        {% for note in site.notes reversed limit:10 %}
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden transition-transform hover:scale-[1.01]">
-          <a href="{{ note.url }}" class="block p-6">
-            <h2 class="text-xl font-bold mb-2 text-gray-800 hover:text-primary transition-colors">
-              {{ note.title }}
-            </h2>
-            
-            <div class="flex flex-wrap items-center text-sm text-gray-500 mb-3">
-              <span class="mr-4"><i class="fa fa-calendar-o mr-1"></i> {{ note.date | date: "%Y-%m-%d" }}</span>
-              <span><i class="fa fa-folder-o mr-1"></i> {{ note.category }}</span>
-            </div>
-            
-            <p class="text-gray-600 line-clamp-3">
-              {{ note.excerpt | strip_html | truncatewords: 30 }}
-            </p>
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-      
-      <!-- 查看更多按钮 -->
-      <div class="mt-8 text-center">
-        <a href="{{ site.baseurl }}/categories/" class="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-          查看全部分类 <i class="fa fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <script>
+    window.$docsify = {
+      name: 'My Notes',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      }
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+</body>
+</html>
