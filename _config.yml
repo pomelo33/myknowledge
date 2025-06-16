@@ -1,33 +1,48 @@
-title: 我的学习笔记
-description: 个人学习和知识积累的记录。
+title: 我的笔记库
+description: 技术学习与知识管理
+url: "https://pomelo33.github.io"
 baseurl: "/myknowledge"
-url: "[https://pomelo33.github.io](https://pomelo33.github.io)"
-theme: jekyll-theme-minimal
 
-# Markdown 解析器
+# Jekyll 配置
 markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/  # 按分类和标题生成永久链接
 
-# Permalinks (可选，但推荐)
-# 让你的 URL 看起来更干净，例如 /notes/programming/python-basics/
-permalink: /:collection/:path/
-
-# 导航菜单项 (用于 _includes/nav.html)
-navigation:
-  - name: 主页
-    link: /
-  - name: Nginx
-    link: /notes/Nginx/
-
-# 排除不需要 Jekyll 处理的文件和目录
+# 禁用不必要的文件处理
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor
+  - package.json
+  - package-lock.json
 
-# 默认 Front Matter (为所有 Markdown 文件设置默认布局)
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+# 自定义集合：笔记
+collections:
+  notes:
+    output: true
+    permalink: /:collection/:path/
+
+# 压缩 HTML
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: []
+
+# 分页配置
+paginate: 10
+paginate_path: "/page:num/"
+
+# 导航菜单配置
+navigation:
+  - title: 首页
+    url: /
+  - title: 分类
+    url: /categories/
+  - title: 标签
+    url: /tags/
+  - title: 搜索
+    url: /search/
+  - title: 关于
+    url: /about/
