@@ -1,9 +1,3 @@
----
-tags:
-- readme
-title: Readme
----
-
 ## Nginx 学习笔记
 [TOC]
 

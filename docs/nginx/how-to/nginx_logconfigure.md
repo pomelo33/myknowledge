@@ -1,9 +1,3 @@
----
-tags:
-- nginx
-title: Nginx Logconfigure
----
-
 ### 📘 生产环境下的 log_format 日志格式优化建议
 [TOC]
 #### ✅ 优化目标：

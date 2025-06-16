@@ -1,9 +1,3 @@
----
-tags:
-- readme
-title: Readme
----
-
 ## 🚀 Flask + Nginx 负载均衡实战（含健康检查 + Redis + 故障模拟） 
 
 [TOC]

@@ -1,9 +1,3 @@
----
-tags:
-- nginx
-title: Nginx Config Prod
----
-
 [TOC]
 ### ⚙️ 1.调优 Nginx 性能的实用建议（生产级）
 以下是从并发性能、安全性、稳定性角度推荐的配置和调整项。

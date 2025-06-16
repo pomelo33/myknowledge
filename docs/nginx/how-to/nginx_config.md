@@ -1,9 +1,3 @@
----
-tags:
-- nginx
-title: Nginx Config
----
-
 ## 🧩 Nginx 配置文件结构理解（以生产环境为导向）
 
 [TOC]

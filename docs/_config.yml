@@ -1,28 +1,20 @@
 title: My Notes
-baseurl: "/myknowledge"
-url: "https://pomelo33.github.io"
+description: Personal knowledge notes.
+baseurl: ""
+url: "https://pomelo33.github.io/myknowledge"
 
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-  - jekyll-remote-theme
+remote_theme: "jekyll/minima@1e8a445"
 
 markdown: kramdown
+paginate: 15
+paginate_path: "/page:num/"
 
-collections:
-  notes:
-    output: true
-    permalink: /notes/:path/
-
-defaults:
-  - scope:
-      path: "notes"
-    values:
-      layout: default
-      collection: notes
+tag_page_layout: tag
+tag_permalink_style: pretty
 
 exclude: ["convert_notes.py"]
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-feed
+  - jekyll-tagging

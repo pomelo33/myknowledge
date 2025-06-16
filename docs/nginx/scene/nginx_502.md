@@ -1,9 +1,3 @@
----
-tags:
-- nginx
-title: Nginx 502
----
-
 [TOC]
 ### 💥 什么是 502 错误？
 502 Bad Gateway 表示 Nginx（或反向代理）成功接收到请求，但后端服务器响应失败或响应超时。
