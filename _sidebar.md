@@ -1,13 +1,10 @@
 - [P](note/P.md)
 - [K](note/k.md)
 - Nginx 笔记
-  - [Readme](note/nginx/README.md)
+  - [简介](note/nginx/README.md)
   - 项目实例
     - Flask Nginx Lb
-      - [Readme](note/nginx/examples/flask-nginx-lb/README.md)
-      - App
-      - Docs
-      - Scripts
+      - [简介](note/nginx/examples/flask-nginx-lb/README.md)
   - 使用技巧
     - [Nginx配置文件详解](note/nginx/how-to/nginx_config.md)
     - [Nginx配置文件优化](note/nginx/how-to/nginx_config_prod.md)

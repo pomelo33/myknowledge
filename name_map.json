@@ -6,5 +6,6 @@
     "nginx_install": "Nginx安装",
     "logconfigure": "Nginx日志配置",
     "scene": "常见问题",
-    "examples": "项目实例"
+    "examples": "项目实例",
+    "readme": "简介"
   }
