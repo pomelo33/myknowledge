@@ -1,0 +1,26 @@
+title: My Notes
+baseurl: "/myknowledge"
+url: "https://pomelo33.github.io"
+
+theme: cayman
+
+markdown: kramdown
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+defaults:
+  - scope:
+      path: "notes"
+    values:
+      layout: default
+      collection: notes
+
+exclude: ["convert_notes.py"]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
