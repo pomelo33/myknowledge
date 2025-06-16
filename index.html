@@ -17,7 +17,7 @@
   <!-- Docsify 核心 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <!-- Docsify TOC 插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/toc.min.js"></script>
+  <script src="//unpkg.com/docsify-plugin-toc/dist/docsify-plugin-toc.min.js"></script>
 
   <script>
     window.$docsify = {
@@ -26,9 +26,10 @@
       subMaxLevel: 3,
       noEmoji: false,
       homepage: 'HOME.md',   // 这里一定要设置 homepage
-      plugins: [
-        window.Docsify.plugins.toc
-      ]
+      toc: {
+      tocMaxLevel: 3,
+      target: 'h2, h3, h4'
+    }
     };
   </script>
 </body>
