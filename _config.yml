@@ -1,0 +1,11 @@
+title: My Notes
+baseurl: "/myknowledge"
+url: "https://pomelo33.github.io"
+theme: minima
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: "note"
+    values:
+      layout: default
