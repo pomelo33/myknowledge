@@ -1,8 +1,6 @@
 ---
 tags:
-- nginx
-- examples
-- flask-nginx-lb
+- readme
 title: Readme
 ---
 

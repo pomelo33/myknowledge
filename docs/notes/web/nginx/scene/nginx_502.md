@@ -1,7 +1,6 @@
 ---
 tags:
 - nginx
-- scene
 title: Nginx 502
 ---
 

@@ -1,4 +1,6 @@
 ---
+tags:
+- p
 title: P
 ---
 
