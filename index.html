@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>My Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>个人笔记展示</title>
+  <!-- Docsify 默认主题 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css" />
 </head>
 <body>
-  <div id="app">加载中...</div>
+  <div id="app"></div>
+
+  <!-- Docsify 核心库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- Docsify TOC 插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/toc.min.js"></script>
+
   <script>
     window.$docsify = {
-      name: 'My Notes',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      }
-    }
+      name: '个人笔记',
+      repo: '',              // 可填写你的项目仓库地址链接
+      loadSidebar: true,     // 加载 _sidebar.md 侧边栏
+      homepage: 'HOME.md',
+      subMaxLevel: 3,        // TOC 目录最大层级，默认 2，改为3更详细
+      plugins: [
+        window.Docsify.plugins.toc
+      ],
+      // 如果需要，配置首页默认打开的笔记
+      // homepage: 'note/README.md'
+    };
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>

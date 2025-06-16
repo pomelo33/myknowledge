@@ -3,6 +3,7 @@ import json
 
 BASE_DIR = "note"
 OUTPUT_FILE = "_sidebar.md"
+HOME_FILE = "HOME.md"
 MAP_FILE = "name_map.json"
 
 # 忽略目录关键字（任意包含即可忽略）
@@ -16,6 +17,7 @@ EXACT_IGNORE_DIR_PATHS = [
     # "k8s/old_version",  # 示例，按需添加
 ]
 
+# 读取英文转中文映射表
 with open(MAP_FILE, "r", encoding="utf-8") as f:
     name_map = json.load(f)
 
@@ -59,10 +61,14 @@ def generate_sidebar():
 
     walk(BASE_DIR)
 
+    content = "\n".join(lines)
+    
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+    with open(HOME_FILE, "w", encoding="utf-8") as f:
+        f.write("# 📚 导航\n\n" + content)
 
-    print(f"✅ 生成成功，已应用忽略规则，输出文件: {OUTPUT_FILE}")
+    print(f"✅ 生成成功：{OUTPUT_FILE} 与 {HOME_FILE} 同步完成")
 
 if __name__ == "__main__":
     generate_sidebar()
