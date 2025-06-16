@@ -1,9 +1,8 @@
 title: 我的学习笔记
 description: 个人学习和知识积累的记录。
-baseurl: "/myknowledge" # 如果你的仓库是 yourusername/my-learning-notes，则必须设置
-url: "[https://pomelo33.github.io](https://pomelo33.github.io)" # 你的 GitHub Pages 完整 URL
-theme: jekyll-theme-minimal # 或其他你喜欢的主题，如 jekyll-theme-cayman 等
-                            # 你也可以不设置主题，然后完全自定义 CSS
+baseurl: "/myknowledge"
+url: "[https://pomelo33.github.io](https://pomelo33.github.io)"
+theme: jekyll-theme-minimal
 
 # Markdown 解析器
 markdown: kramdown
