@@ -1,0 +1,35 @@
+```yaml
+title: 我的学习笔记
+description: 个人学习和知识积累的记录。
+baseurl: "/myknowledge" # 如果你的仓库是 yourusername/my-learning-notes，则必须设置
+url: "[https://pomelo33.github.io](https://pomelo33.github.io)" # 你的 GitHub Pages 完整 URL
+theme: jekyll-theme-minimal # 或其他你喜欢的主题，如 jekyll-theme-cayman 等
+                            # 你也可以不设置主题，然后完全自定义 CSS
+
+# Markdown 解析器
+markdown: kramdown
+
+# Permalinks (可选，但推荐)
+# 让你的 URL 看起来更干净，例如 /notes/programming/python-basics/
+permalink: /:collection/:path/
+
+# 导航菜单项 (用于 _includes/nav.html)
+navigation:
+  - name: 主页
+    link: /
+  - name: Nginx
+    link: /notes/Nginx/
+
+# 排除不需要 Jekyll 处理的文件和目录
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 默认 Front Matter (为所有 Markdown 文件设置默认布局)
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    </head>
+<body>
+    <header>
+        <div class="site-title">
+            <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+            <p>{{ site.description }}</p>
+        </div>
+        {% include nav.html %} {# 引入导航条 #}
+    </header>
+
+    <main>
+        {{ content }} {# 这里会插入你的 Markdown 渲染后的 HTML 内容 #}
+    </main>
+
+    <footer>
+        <p>&copy; {{ site.time | date: "%Y" }} <a href="{{ site.baseurl }}/">{{ site.title }}</a>. All rights reserved.</p>
+        <p>Powered by <a href="[https://pages.github.com/](https://pages.github.com/)">GitHub Pages</a> and <a href="[https://jekyllrb.com/](https://jekyllrb.com/)">Jekyll</a>.</p>
+    </footer>
+</body>
+</html>
