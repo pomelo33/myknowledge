@@ -1,16 +1,10 @@
-# 🏷️ 标签索引
+# 🗃️ 文章归档
 
-## P
+## 2025 年 06 月
+- [k](notes/web/k.md) - 2025-06-17
 - [P](notes/web/P.md) - 2025-06-17
-
-## README
 - [README](notes/web/nginx/README.md) - 2025-06-17
 - [README](notes/web/nginx/examples/flask-nginx-lb/README.md) - 2025-06-17
-
-## k
-- [k](notes/web/k.md) - 2025-06-17
-
-## nginx
 - [nginx_config](notes/web/nginx/how-to/nginx_config.md) - 2025-06-17
 - [nginx_config_prod](notes/web/nginx/how-to/nginx_config_prod.md) - 2025-06-17
 - [nginx_install](notes/web/nginx/how-to/nginx_install.md) - 2025-06-17

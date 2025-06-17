@@ -1,0 +1,5 @@
+{
+    "nginx_config": "Nginx配置文件",
+    "nginx_config_prod": "Nginx配置文件优化",
+    "nginx_logconfigure": "Nginx日志文件"
+}

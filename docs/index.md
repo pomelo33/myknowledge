@@ -1,17 +1,20 @@
----
-layout: default
-title: 所有笔记
----
+# 📚 我的笔记目录
 
-# 所有文章
+[TOC]
 
-- [Nginx 学习笔记](nginx/README)
-- [P.md](P)
-- [k.md](k)
-- [nginx_install.md](nginx/how-to/nginx_install)
-- [nginx反向代理](nginx/how-to/nginx_reverse_proxy)
-- [⚙️ 1.调优 Nginx 性能的实用建议（生产级）](nginx/how-to/nginx_config_prod)
-- [💥 什么是 502 错误？](nginx/scene/nginx_502)
-- [📘 生产环境下的 log_format 日志格式优化建议](nginx/how-to/nginx_logconfigure)
-- [🚀 Flask + Nginx 负载均衡实战（含健康检查 + Redis + 故障模拟）](nginx/examples/flask-nginx-lb/README)
-- [🧩 Nginx 配置文件结构理解（以生产环境为导向）](nginx/how-to/nginx_config)
+- **web**
+  - [k](notes/web/k.md) - 2025-06-17
+  - [P](notes/web/P.md) - 2025-06-17
+  - **nginx**
+    - [README](notes/web/nginx/README.md) - 2025-06-17
+    - **examples**
+      - **flask-nginx-lb**
+        - [README](notes/web/nginx/examples/flask-nginx-lb/README.md) - 2025-06-17
+    - **how-to**
+      - [nginx_config](notes/web/nginx/how-to/nginx_config.md) - 2025-06-17
+      - [nginx_config_prod](notes/web/nginx/how-to/nginx_config_prod.md) - 2025-06-17
+      - [nginx_install](notes/web/nginx/how-to/nginx_install.md) - 2025-06-17
+      - [nginx_logconfigure](notes/web/nginx/how-to/nginx_logconfigure.md) - 2025-06-17
+      - [nginx_reverse_proxy](notes/web/nginx/how-to/nginx_reverse_proxy.md) - 2025-06-17
+    - **scene**
+      - [nginx_502](notes/web/nginx/scene/nginx_502.md) - 2025-06-17
