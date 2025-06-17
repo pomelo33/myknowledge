@@ -1,20 +1,25 @@
-# 📚 我的笔记目录
+---
+layout: default
+title: 笔记索引
+---
+# 🗂 笔记索引
 
-[TOC]
+## ./
+- [P.md](notes/./P.md)
+- [k.md](notes/./k.md)
 
-- **web**
-  - [k](notes/web/k.md) - 2025-06-17
-  - [P](notes/web/P.md) - 2025-06-17
-  - **nginx**
-    - [README](notes/web/nginx/README.md) - 2025-06-17
-    - **examples**
-      - **flask-nginx-lb**
-        - [README](notes/web/nginx/examples/flask-nginx-lb/README.md) - 2025-06-17
-    - **how-to**
-      - [nginx_config](notes/web/nginx/how-to/nginx_config.md) - 2025-06-17
-      - [nginx_config_prod](notes/web/nginx/how-to/nginx_config_prod.md) - 2025-06-17
-      - [nginx_install](notes/web/nginx/how-to/nginx_install.md) - 2025-06-17
-      - [nginx_logconfigure](notes/web/nginx/how-to/nginx_logconfigure.md) - 2025-06-17
-      - [nginx_reverse_proxy](notes/web/nginx/how-to/nginx_reverse_proxy.md) - 2025-06-17
-    - **scene**
-      - [nginx_502](notes/web/nginx/scene/nginx_502.md) - 2025-06-17
+## nginx/
+- [README.md](notes/nginx/README.md)
+
+## nginx\examples\flask-nginx-lb/
+- [README.md](notes/nginx/examples/flask-nginx-lb/README.md)
+
+## nginx\how-to/
+- [nginx_config.md](notes/nginx/how-to/nginx_config.md)
+- [nginx_config_prod.md](notes/nginx/how-to/nginx_config_prod.md)
+- [nginx_install.md](notes/nginx/how-to/nginx_install.md)
+- [nginx_logconfigure.md](notes/nginx/how-to/nginx_logconfigure.md)
+- [nginx_reverse_proxy.md](notes/nginx/how-to/nginx_reverse_proxy.md)
+
+## nginx\scene/
+- [nginx_502.md](notes/nginx/scene/nginx_502.md)

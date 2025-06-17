@@ -1,21 +1,13 @@
-title: My Notes
-description: My Notes
-theme: just-the-docs
+title: "My Notes"
+description: "My Notes"
+remote_theme: pages-themes/architect@v0.2.0
+plugins:
+- jekyll-remote-theme #
+baseurl: "" 
+url: "" 
+markdown: kramdown
 
-# GitHub Pages 必需
-remote_theme: just-the-docs
+plugins:
+  - jekyll-feed
 
-# 搜索功能
-search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 5
-  tokenizer_separator: /[\s/]+/
-  rel_url: true
-  button: true
-
-# 设置默认首页重定向
-# landing_page:
-#   redirect: /notes/
+exclude: [convert_notes.py, containerd, web, title_map.json]

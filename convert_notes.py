@@ -1,156 +1,86 @@
 import os
 import shutil
-import json
-from datetime import datetime
 from pathlib import Path
+import json
 
-# ====== 配置区域 ======
-DST_ROOT = Path("docs/notes")
-INDEX_FILE = Path("docs/index.md")
-TAG_FILE = Path("docs/tag.md")
-TITLE_MAP_FILE = Path("title_map.json")
-USE_MTIME = False  # True 表示使用修改时间排序，False 表示创建时间
+SOURCE_DIRS = ['web', 'containerd']
+TARGET_DIR = Path('docs/notes')
+INDEX_FILE = Path('docs/index.md')
+TAG_FILE = Path('docs/tag.md')
+TITLE_MAP_FILE = 'title_map.json'  # 存储标题映射的 JSON 文件
 
-# 忽略这些目录
-IGNORE_DIRS = {"docs", ".git", "__pycache__", ".vscode", ".idea","scripts","app"}
+# 读取标题映射
+def load_title_map():
+    if os.path.exists(TITLE_MAP_FILE):
+        with open(TITLE_MAP_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
 
-# 图片目录关键词
-IMAGE_DIR_NAMES = {"images", "img", "assets","docs"}
-# ======================
+# 提取标签：以 _ 分隔取前半部分
+def extract_tag(filename):
+    if '_' in filename:
+        return filename.split('_')[0]
+    return 'untagged'
 
-# 加载标题映射
-TITLE_MAP = {}
-if TITLE_MAP_FILE.exists():
-    with TITLE_MAP_FILE.open("r", encoding="utf-8") as f:
-        TITLE_MAP = json.load(f)
+# 递归复制 md 和 img 资源
+def copy_notes():
+    all_notes = []
+    for src_root in SOURCE_DIRS:
+        for root, dirs, files in os.walk(src_root):
+            rel_path = os.path.relpath(root, src_root)
+            dest_path = TARGET_DIR / rel_path
+            os.makedirs(dest_path, exist_ok=True)
 
+            for file in files:
+                if file.endswith('.md'):
+                    src_file = Path(root) / file
+                    dst_file = dest_path / file
+                    shutil.copy2(src_file, dst_file)
+                    all_notes.append((rel_path, file))
+                elif file.lower() in ('images', 'img'):
+                    shutil.copytree(Path(root) / file, dest_path / file, dirs_exist_ok=True)
+    return all_notes
 
-def get_note_sources():
-    return [d for d in Path(".").iterdir() if d.is_dir() and d.name not in IGNORE_DIRS]
+# 生成 index.md
+def generate_index_md(all_notes, title_map):
+    lines = ["---", "layout: default", "title: 笔记索引", "---", "# 🗂 笔记索引\n"]
+    tree = {}
+    for path, file in all_notes:
+        title = title_map.get(file, file)
+        tree.setdefault(path, []).append((file, title))
 
+    for dir_path in sorted(tree):
+        lines.append(f"## {dir_path}/")
+        for file, title in sorted(tree[dir_path]):
+            link = f"notes/{dir_path}/{file}".replace("\\", "/")
+            lines.append(f"- [{title}]({link})")
+        lines.append("")
+    
+    with open(INDEX_FILE, 'w', encoding='utf-8') as f:
+        f.write("\n".join(lines))
 
-def clean_dst_dir():
-    if DST_ROOT.exists():
-        shutil.rmtree(DST_ROOT)
-    DST_ROOT.mkdir(parents=True)
-
-
-def copy_notes_from_sources():
-    for source_root in get_note_sources():
-        for file in source_root.rglob("*"):
-            if file.is_file():
-                rel_path = file.relative_to(source_root)
-                dst_path = DST_ROOT / source_root.name / rel_path
-                dst_path.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(file, dst_path)
-
-
-def collect_articles():
-    articles = []
-    for md_file in DST_ROOT.rglob("*.md"):
-        try:
-            filename = md_file.stem
-            title = TITLE_MAP.get(filename, filename)
-            tag = filename.split("_")[0]
-
-            stat = md_file.stat()
-            time_used = stat.st_mtime if USE_MTIME else stat.st_ctime
-            timestamp = datetime.fromtimestamp(time_used)
-            rel_path = md_file.relative_to("docs")
-
-            articles.append({
-                "title": title,
-                "path": rel_path.as_posix(),
-                "tags": [tag],
-                "created": timestamp,
-                "parts": rel_path.parts[1:-1],  # 目录层级：notes/xxx/yyy/xxx.md
-            })
-        except Exception as e:
-            print(f"[⚠️] Error reading {md_file}: {e}")
-    return sorted(articles, key=lambda x: x["created"])
-
-
-def write_index(articles):
-    lines = ["# 📚 我的笔记目录", "", "[TOC]", ""]
-    current_indent = ""
-
-    def indent(level):
-        return "  " * level + "- "
-
-    def build_tree(items):
-        tree = {}
-        for art in items:
-            current = tree
-            for part in art["parts"]:
-                current = current.setdefault(part, {})
-            current.setdefault("__articles__", []).append(art)
-        return tree
-
-    def render_tree(tree, depth=0):
-        for key, value in sorted(tree.items()):
-            if key == "__articles__":
-                for art in value:
-                    lines.append(indent(depth) + f"[{art['title']}]({art['path']}) - {art['created'].strftime('%Y-%m-%d')}")
-            else:
-                lines.append(indent(depth) + f"**{key}**")
-                render_tree(value, depth + 1)
-
-    tree = build_tree(articles)
-    render_tree(tree)
-
-    INDEX_FILE.write_text("\n".join(lines), encoding="utf-8")
-
-
-def write_tag_index(articles):
+# 生成 tag.md
+def generate_tag_md(all_notes, title_map):
     tag_map = {}
-    for art in articles:
-        for tag in art["tags"]:
-            tag_map.setdefault(tag, []).append(art)
-
-    lines = ["# 🏷️ 标签索引", ""]
+    for path, file in all_notes:
+        tag = extract_tag(file)
+        title = title_map.get(file, file)
+        link = f"notes/{path}/{file}".replace("\\", "/")
+        tag_map.setdefault(tag, []).append((title, link))
+    
+    lines = ["---", "layout: tag", "title: 标签页", "---", "# 🏷 标签\n"]
     for tag in sorted(tag_map):
         lines.append(f"## {tag}")
-        for art in tag_map[tag]:
-            lines.append(f"- [{art['title']}]({art['path']}) - {art['created'].strftime('%Y-%m-%d')}")
+        for title, link in tag_map[tag]:
+            lines.append(f"- [{title}]({link})")
         lines.append("")
+    
+    with open(TAG_FILE, 'w', encoding='utf-8') as f:
+        f.write("\n".join(lines))
 
-    TAG_FILE.write_text("\n".join(lines), encoding="utf-8")
-
-ARCHIVE_FILE = Path("docs/archive.md")
-
-# 文档归档页面
-def write_archive_index(articles):
-    archive_map = {}
-    for art in articles:
-        y_m = art["created"].strftime("%Y-%m")
-        archive_map.setdefault(y_m, []).append(art)
-
-    lines = ["# 🗃️ 文章归档", ""]
-    for y_m in sorted(archive_map.keys(), reverse=True):
-        display_time = datetime.strptime(y_m, "%Y-%m").strftime("%Y 年 %m 月")
-        lines.append(f"## {display_time}")
-        for art in sorted(archive_map[y_m], key=lambda x: x["created"]):
-            lines.append(f"- [{art['title']}]({art['path']}) - {art['created'].strftime('%Y-%m-%d')}")
-        lines.append("")
-
-    ARCHIVE_FILE.write_text("\n".join(lines), encoding="utf-8")
-
-
-def main():
-    print("📂 清理构建目录...")
-    clean_dst_dir()
-    print("📥 复制笔记文件中...")
-    copy_notes_from_sources()
-    print("🧩 收集文章信息...")
-    articles = collect_articles()
-    print("📄 生成 index.md...")
-    write_index(articles)
-    print("🏷️ 生成 tag.md...")
-    write_tag_index(articles)
-    print("✅ 构建完成，共处理文章：", len(articles))
-    write_archive_index(articles)
-    print("🗃️ 生成 archive.md...")
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    title_map = load_title_map()
+    all_notes = copy_notes()
+    generate_index_md(all_notes, title_map)
+    generate_tag_md(all_notes, title_map)
+    print("✅ 构建完成")
