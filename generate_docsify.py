@@ -70,24 +70,29 @@ def write_docsify_files(sidebar_lines, readme_structure):
     sidebar_path = os.path.join(DOCS_DIR, '_sidebar.md')
 
     with open(readme_path, 'w', encoding='utf-8') as f:
-        f.write("# 欢迎使用我的笔记站\n\n")
-        # f.write("下方是按目录结构整理的笔记列表：\n")
+        f.write("# 🎉 欢迎来到我的个人笔记站 \n\n")
+        f.write("📝 记录技术学习和项目实践中的点滴\n\n")
+        # 不显示一级目录，直接展示二级、三级
 
+        # 遍历一级
         for first in readme_structure:
-            f.write(f"\n## {first}\n")
+            # 直接遍历二级目录
             for second in readme_structure[first]:
                 if second:
-                    f.write(f"\n### {second}\n")
+                    f.write(f"\n## {second}\n")  # 二级目录改为##标题
                 for third in readme_structure[first][second]:
                     if third:
-                        f.write(f"\n#### {third}\n")
+                        f.write(f"\n### {third}\n")  # 三级目录改为###标题
                     for title, path in readme_structure[first][second][third]:
                         f.write(f"- [{title}]({path})\n")
 
+        # f.write("---\n\n")
+        # # f.write("✨ 祝你学习愉快，有所收获！\n")
     with open(sidebar_path, 'w', encoding='utf-8') as f:
         f.write("- [首页](README.md)\n")
         for line in sidebar_lines:
             f.write(f"{line}\n")
+
 
 def main():
     title_map = load_title_mapping('title_map.json')
@@ -97,7 +102,7 @@ def main():
 
     sidebar_lines, readme_structure = copy_notes('.', DEST_DIR, title_map)
     write_docsify_files(sidebar_lines, readme_structure)
-    print("✅ README.md 已生成三级目录结构，笔记复制完成。")
+    print("✅ README.md 已生成目录结构，笔记复制完成。")
 
 if __name__ == '__main__':
     main()

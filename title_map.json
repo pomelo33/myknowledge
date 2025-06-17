@@ -1,9 +1,9 @@
 {
     "titles": {
+        "nginx_install.md": "nginx安装",
         "nginx_config.md": "nginx配置文件",
         "nginx_config_prod.md": "nginx配置文件优化",
         "nginx_502.md": "502报错",
-        "nginx_install.md": "nginx安装",
         "nginx_logconfigure.md": "日志配置",
         "nginx_reverse_proxy.md": "反向代理"
     },
@@ -12,6 +12,7 @@
         "containerd": "容器技术",
         "how-to": "配置详解",
         "examples": "实际运用",
-        "scene": "常见问题"
+        "scene": "常见问题",
+        "nginx": "Nginx"
     }
 }
