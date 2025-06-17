@@ -4,11 +4,9 @@
 ## 中间件
 
 ### nginx
-- [README](notes/中间件/nginx/README.md)
 
 #### 实际运用
 - [nginx+flask项目实验](notes/中间件/nginx/实际运用/nginx+flask项目实验.md)
-- [README](notes/中间件/nginx/实际运用/README.md)
 
 #### 配置详解
 - [nginx配置文件](notes/中间件/nginx/配置详解/nginx_config.md)

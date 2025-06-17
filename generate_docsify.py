@@ -12,8 +12,8 @@ def load_title_mapping(json_file):
     with open(json_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def should_copy_file(file_path):
-    return file_path.endswith('.md')
+def should_copy_file(file_name):
+    return file_name.endswith('.md') and file_name.lower() != 'readme.md'
 
 def should_copy_dir(dirname):
     return any(d in dirname for d in RESOURCE_DIRS)

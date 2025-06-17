@@ -1,7 +1,5 @@
 - [首页](README.md)
-    - [README](notes/中间件/nginx/README.md)
       - [nginx+flask项目实验](notes/中间件/nginx/实际运用/nginx+flask项目实验.md)
-      - [README](notes/中间件/nginx/实际运用/README.md)
       - [nginx配置文件](notes/中间件/nginx/配置详解/nginx_config.md)
       - [nginx配置文件优化](notes/中间件/nginx/配置详解/nginx_config_prod.md)
       - [nginx安装](notes/中间件/nginx/配置详解/nginx_install.md)
