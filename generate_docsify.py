@@ -71,20 +71,31 @@ def write_docsify_files(sidebar_lines, readme_structure):
 
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write("# 🎉 欢迎来到我的个人笔记站 \n\n")
-        f.write("📝 记录技术学习和项目实践中的点滴\n\n")
+        # f.write("📝 记录技术学习和项目实践中的点滴\n\n")
+        f.write("💡 每一篇笔记，都是思考沉淀 \n\n")
         # 不显示一级目录，直接展示二级、三级
 
-        # 遍历一级
-        for first in readme_structure:
-            # 直接遍历二级目录
-            for second in readme_structure[first]:
+        # # 遍历一级
+        # for first in readme_structure:
+        #     # 直接遍历二级目录
+        #     for second in readme_structure[first]:
+        #         if second:
+        #             f.write(f"\n## {second}\n")  # 二级目录改为##标题
+        #         for third in readme_structure[first][second]:
+        #             if third:
+        #                 f.write(f"\n### {third}\n")  # 三级目录改为###标题
+        #             for title, path in readme_structure[first][second][third]:
+        #                 f.write(f"- [{title}]({path})\n")
+        for first in sorted(readme_structure, key=lambda x: x):
+            for second in sorted(readme_structure[first], key=lambda x: x):
                 if second:
-                    f.write(f"\n## {second}\n")  # 二级目录改为##标题
-                for third in readme_structure[first][second]:
+                    f.write(f"### 📚 {second}\n\n")
+                for third in sorted(readme_structure[first][second], key=lambda x: x):
                     if third:
-                        f.write(f"\n### {third}\n")  # 三级目录改为###标题
-                    for title, path in readme_structure[first][second][third]:
-                        f.write(f"- [{title}]({path})\n")
+                        f.write(f"#### 📝 {third}\n\n")
+                    for title, path in sorted(readme_structure[first][second][third], key=lambda x: x[0]):
+                        f.write(f"- [📄 {title}]({path})\n")
+                    f.write('\n')
 
         # f.write("---\n\n")
         # # f.write("✨ 祝你学习愉快，有所收获！\n")
