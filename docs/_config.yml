@@ -3,7 +3,7 @@ description: My Notes
 theme: just-the-docs
 
 # GitHub Pages 必需
-remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs
 
 # 搜索功能
 search_enabled: true

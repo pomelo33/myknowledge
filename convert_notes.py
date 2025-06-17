@@ -12,10 +12,10 @@ TITLE_MAP_FILE = Path("title_map.json")
 USE_MTIME = False  # True 表示使用修改时间排序，False 表示创建时间
 
 # 忽略这些目录
-IGNORE_DIRS = {"docs", ".git", "__pycache__", ".vscode", ".idea"}
+IGNORE_DIRS = {"docs", ".git", "__pycache__", ".vscode", ".idea","scripts","app"}
 
 # 图片目录关键词
-IMAGE_DIR_NAMES = {"images", "img", "assets"}
+IMAGE_DIR_NAMES = {"images", "img", "assets","docs"}
 # ======================
 
 # 加载标题映射
