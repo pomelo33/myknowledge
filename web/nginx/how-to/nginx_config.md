@@ -1,7 +1,5 @@
 ### 🧩 Nginx 配置文件结构理解（以生产环境为导向）
 
-[TOC]
-
 ### 📁 一、配置结构概览（nginx.conf）
 ```nginx
 # 全局块（global）

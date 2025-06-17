@@ -1,11 +1,21 @@
 {
     "titles": {
-        "nginx_install.md": "nginx安装",
-        "nginx_config.md": "nginx配置文件",
-        "nginx_config_prod.md": "nginx配置文件优化",
-        "nginx_502.md": "502报错",
-        "nginx_logconfigure.md": "日志配置",
-        "nginx_reverse_proxy.md": "反向代理"
+        "nginx_install.md": "Nginx安装",
+        "nginx_config.md": "Nginx配置文件",
+        "nginx_config_prod.md": "Nginx配置文件优化",
+        "nginx_502.md": "Nginx502报错",
+        "nginx_logconfigure.md": "Nginx日志配置",
+        "nginx_reverse_proxy.md": "Nginx反向代理",
+        "nginx_install_module.md": "NGinx动态安装模块",
+        "linux_create_lvm.md": "linux创建LVM",
+        "linux_expansion_lvm.md": "linux扩容LVM",
+        "linux_delete_lvm.md": "linux删除LVM",
+        "linux_install_java.md": "linux中Java环境安装",
+        "linux_install_python.md": "linux中Python环境安装",
+        "linux_update_kernel.md": "linux内核升级",
+        "sysbench_info.md": "sysbench压测工具介绍",
+        "sysbench_mysql.md": "sysbench压缩Mysql数据库",
+        "sysbench_system.md": "sysbench压测系统CPU等"
     },
     "dirs": {
         "web": "中间件",
@@ -13,6 +23,10 @@
         "how-to": "配置详解",
         "examples": "实际运用",
         "scene": "常见问题",
-        "nginx": "Nginx"
+        "nginx": "Nginx",
+        "system": "系统",
+        "base": "基础配置",
+        "software": "软件安装和升级",
+        "compression": "压力测试"
     }
 }
