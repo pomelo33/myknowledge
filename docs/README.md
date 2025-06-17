@@ -1,1 +1,21 @@
-# myknowledge
+# 欢迎使用我的笔记站
+
+
+## 中间件
+
+### nginx
+- [README](notes/中间件/nginx/README.md)
+
+#### 实际运用
+- [nginx+flask项目实验](notes/中间件/nginx/实际运用/nginx+flask项目实验.md)
+- [README](notes/中间件/nginx/实际运用/README.md)
+
+#### 配置详解
+- [nginx配置文件](notes/中间件/nginx/配置详解/nginx_config.md)
+- [nginx配置文件优化](notes/中间件/nginx/配置详解/nginx_config_prod.md)
+- [nginx安装](notes/中间件/nginx/配置详解/nginx_install.md)
+- [日志配置](notes/中间件/nginx/配置详解/nginx_logconfigure.md)
+- [反向代理](notes/中间件/nginx/配置详解/nginx_reverse_proxy.md)
+
+#### 常见问题
+- [502报错](notes/中间件/nginx/常见问题/nginx_502.md)
