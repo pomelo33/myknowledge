@@ -1,6 +1,6 @@
 ## 🔧 Sysbench
-Sysbench 是一款开源的多功能性能测试工具，广泛用于测试数据库、CPU、内存、文件系统和线程等性能。它支持多种数据库（如 MySQL、PostgreSQL）和多种测试模式，是数据库性能测试和基准测试的常用工具。
-
+Sysbench 是一款开源的多功能性能测试工具，广泛用于测试数据库、CPU、内存、文件系统和线程等性能。它支持多种数据库（如 MySQL、PostgreSQL）和多种测试模式，是数据库性能测试和基准测试的常用工具。  
+项目地址：https://github.com/akopytov/sysbench  
 ### 1、安装
 ```
 curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | sudo bash

@@ -6,7 +6,8 @@
         "nginx_502.md": "Nginx502报错",
         "nginx_logconfigure.md": "Nginx日志配置",
         "nginx_reverse_proxy.md": "Nginx反向代理",
-        "nginx_install_module.md": "NGinx动态安装模块",
+        "nginx_install_module.md": "Nginx动态安装模块",
+
         "linux_create_lvm.md": "linux创建LVM",
         "linux_expansion_lvm.md": "linux扩容LVM",
         "linux_delete_lvm.md": "linux删除LVM",

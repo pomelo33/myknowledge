@@ -12,7 +12,7 @@
 - [Nginx配置文件](notes/中间件/Nginx/配置详解/nginx_config.md)
 - [Nginx配置文件优化](notes/中间件/Nginx/配置详解/nginx_config_prod.md)
 - [Nginx安装](notes/中间件/Nginx/配置详解/nginx_install.md)
-- [NGinx动态安装模块](notes/中间件/Nginx/配置详解/nginx_install_module.md)
+- [Nginx动态安装模块](notes/中间件/Nginx/配置详解/nginx_install_module.md)
 - [Nginx日志配置](notes/中间件/Nginx/配置详解/nginx_logconfigure.md)
 - [Nginx反向代理](notes/中间件/Nginx/配置详解/nginx_reverse_proxy.md)
 
@@ -21,6 +21,8 @@
 
 ## 压力测试
 - [sysbench压测工具介绍](notes/系统/压力测试/sysbench_info.md)
+- [sysbench压缩Mysql数据库](notes/系统/压力测试/sysbench_mysql.md)
+- [sysbench压测系统CPU等](notes/系统/压力测试/sysbench_system.md)
 
 ## linux
 
