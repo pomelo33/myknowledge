@@ -70,7 +70,7 @@ def write_docsify_files(sidebar_lines, readme_structure):
     sidebar_path = os.path.join(DOCS_DIR, '_sidebar.md')
 
     with open(readme_path, 'w', encoding='utf-8') as f:
-        f.write("# 🎉 欢迎来到我的个人笔记站 \n\n")
+        f.write("# 🎉 欢迎来到我的笔记站 \n\n")
         # f.write("📝 记录技术学习和项目实践中的点滴\n\n")
         f.write("💡 每一篇笔记，都是思考沉淀 \n\n")
         # 不显示一级目录，直接展示二级、三级

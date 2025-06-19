@@ -6,9 +6,75 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+
+  <!-- 底部显示格式 -->
+  <style>
+    /* CSS样式确保底部固定 */
+    html, body {
+      height: 100%; /* 让html和body占据整个视口高度 */
+      margin: 0;
+      padding: 0;
+      display: flex; /* 使用Flexbox布局 */
+      flex-direction: column; /* 垂直排列子元素 */
+      overflow-x: hidden; /* 防止出现水平滚动条 */
+    }
+    #app {
+      flex-grow: 1; /* Docsify内容区域占据剩余空间 */
+      padding-bottom: 35px; /* 为底部标签预留空间，避免遮挡内容。根据字体大小调整此值。 */
+    }
+
+    .colorful-scrolling-footer {
+      position: fixed; /* 固定定位 */
+      bottom: 0; /* 底部对齐 */
+      left: 0;
+      width: 100%; /* 宽度占满 */
+      /* 移除背景色和阴影，只保留字体滚动 */
+      background-color: transparent; /* 背景透明 */
+      box-shadow: none; /* 移除阴影 */
+      
+      color: #666; /* 默认文字颜色，您可以根据主题调整 */
+      text-align: center; /* 文本居中 */
+      padding: 5px 0; /* 内边距减小，因为没有背景和边框 */
+      font-size: 14px; /* 字体大小 */
+      z-index: 1000; /* 确保在其他内容之上 */
+      white-space: nowrap; /* 确保内容不换行 */
+      overflow: hidden; /* 隐藏超出容器的内容 */
+      /* 添加动画效果 */
+      animation: scrollText 30s linear infinite; /* 30秒滚动一圈，无限循环，线性速度 */
+    }
+
+    /* 定义滚动动画 */
+    @keyframes scrollText {
+      0% { transform: translateX(100%); } /* 从右侧完全移出开始 */
+      100% { transform: translateX(-100%); } /* 滚动到左侧完全移出结束 */
+    }
+
+    .colorful-scrolling-footer span {
+      display: inline-block; /* 确保span可以被动画控制 */
+      padding: 0 10px; /* 元素之间的间距 */
+    }
+
+    .colorful-scrolling-footer .icon {
+      margin-right: 5px; /* 图标与文字的间距 */
+    }
+
+    /* 定义彩色字体 */
+    .color-purple { color: #9b59b6; } /* 紫色 */
+    .color-green { color: #2ecc71; } /* 绿色 */
+    .color-blue { color: #3498db; } /* 蓝色 */
+    .color-red { color: #e74c3c; } /* 红色 */
+    .color-orange { color: #f39c12; } /* 橙色 */
+  </style>
 </head>
 <body>
   <div id="app"></div>
+<!-- 底部时间显示内容 -->
+  <div class="colorful-scrolling-footer">
+    <span class="color-blue"><i class="fas fa-heart icon"></i> 👋 欢迎访问我的笔记！</span>
+    <span class="color-blue"><i class="fas fa-clock icon"></i> <span id="beijing-time-display"></span></span>
+    <span class="color-blue"><i class="fas fa-rocket icon"></i> <span id="runtime-display"></span></span>
+  </div>
+  <!-- docsify 相关配置参数 -->
   <script>
     window.$docsify = {
       name: 'My Notes',
@@ -53,5 +119,57 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-back-to-top/dist/docsify-back-to-top.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  
+  <!-- 添加运行时间 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // **1. 站点运行时间计算**
+      // 设定您的网站上线日期（请修改为您的实际日期和时区）
+      // 示例：2023年6月15日 北京时间上午8点上线
+      const siteLaunchDate = new Date('2025-06-16T08:00:00+08:00'); // 北京时间为 UTC+8
+
+      function updateRunTime() {
+        const now = new Date();
+        const diff = now.getTime() - siteLaunchDate.getTime(); // 毫秒差
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        // const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        // const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const runtimeElement = document.getElementById('runtime-display');
+        if (runtimeElement) {
+          runtimeElement.textContent = `💡 本站已运行: ${days} 天 `;  //${hours} 小时 ${minutes} 分 ${seconds} 秒`;
+        }
+      }
+
+      // **2. 北京时间显示**
+      function updateBeijingTime() {
+        // 创建一个日期对象，并转换为北京时间（UTC+8）
+        const options = {
+          timeZone: 'Asia/Shanghai', // 北京时区
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false // 使用24小时制
+        };
+        const beijingNow = new Date().toLocaleString('zh-CN', options);
+
+        const beijingTimeElement = document.getElementById('beijing-time-display');
+        if (beijingTimeElement) {
+          beijingTimeElement.textContent = `🕒 当前北京时间: ${beijingNow}`;
+        }
+      }
+
+      // 页面加载时立即更新一次，并每秒更新
+      updateRunTime();
+      updateBeijingTime();
+      setInterval(updateRunTime, 1000);
+      setInterval(updateBeijingTime, 1000);
+    });
+  </script>
 </body>
 </html>
