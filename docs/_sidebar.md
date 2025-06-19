@@ -17,4 +17,5 @@
       - [linux删除LVM](notes/system/linux/存储相关/linux_delete_lvm.md)
       - [linux扩容LVM](notes/system/linux/存储相关/linux_expansion_lvm.md)
       - [gitlab安装](notes/devops/gitlab/配置详解/gitlab_install.md)
+      - [gitlab重置登录密码](notes/devops/gitlab/配置详解/gitlab_passwd.md)
       - [gitlab runner配置与使用](notes/devops/gitlab/配置详解/gitlanb_gitlab-runner.md)
