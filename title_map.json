@@ -16,20 +16,20 @@
         "linux_update_kernel.md": "linux内核升级",
         "sysbench_info.md": "sysbench压测工具介绍",
         "sysbench_mysql.md": "sysbench压缩Mysql数据库",
-        "sysbench_system.md": "sysbench压测系统CPU等"
-
+        "sysbench_system.md": "sysbench压测系统CPU等",
+        
+        "gitlab_install.md": "gitlab安装"
         
     },
     "dirs": {
-        "web": "中间件",
         "containerd": "容器技术",
         "how-to": "配置详解",
         "examples": "实际运用",
         "scene": "常见问题",
         "nginx": "Nginx",
-        "system": "系统",
         "base": "基础配置",
         "software": "软件安装和升级",
-        "compression": "压力测试"
+        "compression": "压力测试",
+        "storage": "存储相关"
     }
 }
