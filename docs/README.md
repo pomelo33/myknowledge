@@ -6,6 +6,7 @@
 
 #### 📝 配置详解
 
+- [📄 gitlab runner配置与使用](notes/devops/gitlab/配置详解/gitlanb_gitlab-runner.md)
 - [📄 gitlab安装](notes/devops/gitlab/配置详解/gitlab_install.md)
 
 ### 📚 linux
@@ -24,9 +25,11 @@
 
 ### 📚 压力测试
 
-- [📄 sysbench压测工具介绍](notes/system/压力测试/sysbench_info.md)
-- [📄 sysbench压测系统CPU等](notes/system/压力测试/sysbench_system.md)
-- [📄 sysbench压缩Mysql数据库](notes/system/压力测试/sysbench_mysql.md)
+#### 📝 sysbench
+
+- [📄 sysbench压测工具介绍](notes/system/压力测试/sysbench/sysbench_info.md)
+- [📄 sysbench压测系统CPU等](notes/system/压力测试/sysbench/sysbench_system.md)
+- [📄 sysbench压缩Mysql数据库](notes/system/压力测试/sysbench/sysbench_mysql.md)
 
 ### 📚 Nginx
 

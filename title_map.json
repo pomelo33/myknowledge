@@ -18,7 +18,8 @@
         "sysbench_mysql.md": "sysbench压缩Mysql数据库",
         "sysbench_system.md": "sysbench压测系统CPU等",
         
-        "gitlab_install.md": "gitlab安装"
+        "gitlab_install.md": "gitlab安装",
+        "gitlanb_gitlab-runner.md": "gitlab runner配置与使用"
         
     },
     "dirs": {
