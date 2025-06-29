@@ -11,3 +11,5 @@ GitLab Runner 是 GitLab CI/CD 执行任务的核心组件，它负责从 GitLab
 curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
 sudo apt install gitlab-runner
 ```
+
+#### 

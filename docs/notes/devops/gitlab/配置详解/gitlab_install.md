@@ -14,7 +14,7 @@
 #### ✅ 1. 添加镜像源和安装依赖
 ```
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl openssh-server ca-certificates tzdata perl vim
+sudo apt install -y curl openssh-server ca-certificates tzdata perl vim git 
 ```
 #### ✅ 2. 添加 GitLab 安装源
 ```

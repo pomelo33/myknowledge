@@ -6,7 +6,8 @@
 
 #### 📝 配置详解
 
-- [📄 gitlab runner配置与使用](notes/devops/gitlab/配置详解/gitlanb_gitlab-runner.md)
+- [📄 gitlab runner安装与配置](notes/devops/gitlab/配置详解/gitlab_gitlab_runner_install.md)
+- [📄 gitlab runner详解](notes/devops/gitlab/配置详解/gitlab_gitlab_runner.md)
 - [📄 gitlab安装](notes/devops/gitlab/配置详解/gitlab_install.md)
 - [📄 gitlab重置登录密码](notes/devops/gitlab/配置详解/gitlab_passwd.md)
 

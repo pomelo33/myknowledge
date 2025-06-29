@@ -19,8 +19,9 @@
         "sysbench_system.md": "sysbench压测系统CPU等",
         
         "gitlab_install.md": "gitlab安装",
-        "gitlanb_gitlab-runner.md": "gitlab runner配置与使用",
-        "gitlab_passwd.md": "gitlab重置登录密码"
+        "gitlab_gitlab_runner_install.md": "gitlab runner安装与配置",
+        "gitlab_passwd.md": "gitlab重置登录密码",
+        "gitlab_gitlab_runner.md": "gitlab runner详解"
         
     },
     "dirs": {
