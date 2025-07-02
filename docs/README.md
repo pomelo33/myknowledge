@@ -51,4 +51,5 @@
 - [📄 Nginx日志配置](notes/web/Nginx/配置详解/nginx_logconfigure.md)
 - [📄 Nginx配置文件](notes/web/Nginx/配置详解/nginx_config.md)
 - [📄 Nginx配置文件优化](notes/web/Nginx/配置详解/nginx_config_prod.md)
+- [📄 nginx日志切割](notes/web/Nginx/配置详解/nginx_logs.md)
 

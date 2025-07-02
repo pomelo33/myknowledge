@@ -5,6 +5,7 @@
       - [Nginx安装](notes/web/Nginx/配置详解/nginx_install.md)
       - [Nginx动态安装模块](notes/web/Nginx/配置详解/nginx_install_module.md)
       - [Nginx日志配置](notes/web/Nginx/配置详解/nginx_logconfigure.md)
+      - [nginx日志切割](notes/web/Nginx/配置详解/nginx_logs.md)
       - [Nginx反向代理](notes/web/Nginx/配置详解/nginx_reverse_proxy.md)
       - [Nginx502报错](notes/web/Nginx/常见问题/nginx_502.md)
       - [sysbench压测工具介绍](notes/system/压力测试/sysbench/sysbench_info.md)

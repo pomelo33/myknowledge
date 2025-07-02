@@ -33,6 +33,6 @@ log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
 
 #### 📋 日志使用建议
 - 使用按天切分的日志文件 /var/log/nginx/access_$(date +%F).log；
-- 利用 logrotate 设置自动归档、压缩、保留；
+- 利用 logrotate 设置自动归档、压缩、保留；[nginx日志切割](nginx_logs.md)
 - 配合 GoAccess 可实现实时流量、访问分析；
 - 配合 fail2ban 或 WAF 对恶意 IP / User-Agent / Referer 做规则封锁。
