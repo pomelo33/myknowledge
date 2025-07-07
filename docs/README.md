@@ -65,3 +65,9 @@
 
 - [📄 Redis数据快速写入脚本](notes/数据库/Redis/实际运用/redis_database_script.md)
 
+#### 📝 配置详解
+
+- [📄 Redis主从模式](notes/数据库/Redis/配置详解/redis_master_slave.md)
+- [📄 Redis哨兵模式](notes/数据库/Redis/配置详解/redis_sentinel.md)
+- [📄 Redis源码安装](notes/数据库/Redis/配置详解/redis_install.md)
+

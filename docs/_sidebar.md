@@ -23,3 +23,6 @@
       - [Gitlab安装](notes/devops/Gitlab/配置详解/gitlab_install.md)
       - [Gitlab重置登录密码](notes/devops/Gitlab/配置详解/gitlab_passwd.md)
       - [Redis数据快速写入脚本](notes/数据库/Redis/实际运用/redis_database_script.md)
+      - [Redis源码安装](notes/数据库/Redis/配置详解/redis_install.md)
+      - [Redis主从模式](notes/数据库/Redis/配置详解/redis_master_slave.md)
+      - [Redis哨兵模式](notes/数据库/Redis/配置详解/redis_sentinel.md)

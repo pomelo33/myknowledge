@@ -27,7 +27,10 @@
 
         "shell_java.md": "Java启停脚本",
 
-        "redis_database_script.md": "Redis数据快速写入脚本"
+        "redis_database_script.md": "Redis数据快速写入脚本",
+        "redis_install.md": "Redis源码安装",
+        "redis_sentinel.md": "Redis哨兵模式",
+        "redis_master_slave.md": "Redis主从模式"
         
     },
     "dirs": {
