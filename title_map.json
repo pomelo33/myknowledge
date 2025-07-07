@@ -7,22 +7,27 @@
         "nginx_logconfigure.md": "Nginx日志配置",
         "nginx_reverse_proxy.md": "Nginx反向代理",
         "nginx_install_module.md": "Nginx动态安装模块",
-        "nginx_logs.md": "nginx日志切割",
+        "nginx_logs.md": "Nginx日志切割",
+        "nginx+flask项目实验.md": "Nginx和Flask项目实验",
 
-        "linux_create_lvm.md": "linux创建LVM",
-        "linux_expansion_lvm.md": "linux扩容LVM",
-        "linux_delete_lvm.md": "linux删除LVM",
-        "linux_install_java.md": "linux中Java环境安装",
-        "linux_install_python.md": "linux中Python环境安装",
-        "linux_update_kernel.md": "linux内核升级",
-        "sysbench_info.md": "sysbench压测工具介绍",
-        "sysbench_mysql.md": "sysbench压缩Mysql数据库",
-        "sysbench_system.md": "sysbench压测系统CPU等",
+        "linux_create_lvm.md": "Linux创建LVM",
+        "linux_expansion_lvm.md": "Linux扩容LVM",
+        "linux_delete_lvm.md": "Linux删除LVM",
+        "linux_install_java.md": "Linux中Java环境安装",
+        "linux_install_python.md": "Linux中Python环境安装",
+        "linux_update_kernel.md": "Linux内核升级",
+        "sysbench_info.md": "Sysbench压测工具介绍",
+        "sysbench_mysql.md": "Sysbench压缩Mysql数据库",
+        "sysbench_system.md": "Sysbench压测系统CPU等",
         
-        "gitlab_install.md": "gitlab安装",
-        "gitlab_gitlab_runner_install.md": "gitlab runner安装与配置",
-        "gitlab_passwd.md": "gitlab重置登录密码",
-        "gitlab_gitlab_runner.md": "gitlab runner详解"
+        "gitlab_install.md": "Gitlab安装",
+        "gitlab_gitlab_runner_install.md": "Gitlab Runner安装与配置",
+        "gitlab_passwd.md": "Gitlab重置登录密码",
+        "gitlab_gitlab_runner.md": "Gitlab Runner详解",
+
+        "shell_java.md": "Java启停脚本",
+
+        "redis_database_script.md": "Redis数据快速写入脚本"
         
     },
     "dirs": {
@@ -30,10 +35,16 @@
         "how-to": "配置详解",
         "examples": "实际运用",
         "scene": "常见问题",
-        "nginx": "Nginx",
         "base": "基础配置",
         "software": "软件安装和升级",
         "compression": "压力测试",
-        "storage": "存储相关"
+        "storage": "存储相关",
+        "database": "数据库",
+        "nginx": "Nginx",
+        "gitlab": "Gitlab",
+        "redis": "Redis",
+        "mysql": "Mysql",
+        "linux": "Linux",
+        "shell": "Shell"
     }
 }

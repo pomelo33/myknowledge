@@ -3,7 +3,7 @@ import shutil
 import json
 from collections import defaultdict
 
-SOURCE_DIRS = ['web', 'containerd',"system",'devops']
+SOURCE_DIRS = ['web', 'containerd',"system",'devops','database']
 RESOURCE_DIRS = ['img', 'images', 'docs',"assets"]
 DEST_DIR = 'docs/notes'
 DOCS_DIR = 'docs'
