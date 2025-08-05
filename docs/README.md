@@ -66,12 +66,12 @@
 
 ### 📚 Mysql
 
-#### 📝 配置详解
+#### 📝 安装配置
 
-- [📄 Mysql主从配置](notes/数据库/Mysql/配置详解/mysql_master_slave_install.md)
-- [📄 Yum安装Mysql](notes/数据库/Mysql/配置详解/mysql_yum_install.md)
-- [📄 二进制安装Mysql](notes/数据库/Mysql/配置详解/mysql_binary_install.md)
-- [📄 容器安装Mysql](notes/数据库/Mysql/配置详解/mysql_container_install.md)
+- [📄 Mysql主从配置](notes/数据库/Mysql/安装配置/mysql_master_slave_install.md)
+- [📄 Yum安装Mysql](notes/数据库/Mysql/安装配置/mysql_yum_install.md)
+- [📄 二进制安装Mysql](notes/数据库/Mysql/安装配置/mysql_binary_install.md)
+- [📄 容器安装Mysql](notes/数据库/Mysql/安装配置/mysql_container_install.md)
 
 ### 📚 Redis
 

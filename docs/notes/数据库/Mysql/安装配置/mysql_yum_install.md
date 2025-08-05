@@ -1,5 +1,4 @@
-### yum安装mysql5.7以及默认root密码查看并修改
-
+### 📝 YUM安装Mysql数据库
 #### 1.mysql的yum仓库
 ```
 https://dev.mysql.com/downloads/repo/yum  

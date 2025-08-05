@@ -56,6 +56,7 @@
         "redis": "Redis",
         "mysql": "Mysql",
         "linux": "Linux",
-        "shell": "Shell"
+        "shell": "Shell",
+        "install": "安装配置"
     }
 }
