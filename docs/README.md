@@ -13,6 +13,11 @@
 
 ### 📚 Linux
 
+#### 📝 基础配置
+
+- [📄 Rocky9更换国内镜像源](notes/system/Linux/基础配置/rocky_os_yum.md)
+- [📄 Rocky9配置静态IP](notes/system/Linux/基础配置/rocky_ipaddress.md)
+
 #### 📝 存储相关
 
 - [📄 Linux创建LVM](notes/system/Linux/存储相关/linux_create_lvm.md)
@@ -58,6 +63,15 @@
 - [📄 Nginx日志配置](notes/web/Nginx/配置详解/nginx_logconfigure.md)
 - [📄 Nginx配置文件](notes/web/Nginx/配置详解/nginx_config.md)
 - [📄 Nginx配置文件优化](notes/web/Nginx/配置详解/nginx_config_prod.md)
+
+### 📚 Mysql
+
+#### 📝 配置详解
+
+- [📄 Mysql主从配置](notes/数据库/Mysql/配置详解/mysql_master_slave_install.md)
+- [📄 Yum安装Mysql](notes/数据库/Mysql/配置详解/mysql_yum_install.md)
+- [📄 二进制安装Mysql](notes/数据库/Mysql/配置详解/mysql_binary_install.md)
+- [📄 容器安装Mysql](notes/数据库/Mysql/配置详解/mysql_container_install.md)
 
 ### 📚 Redis
 

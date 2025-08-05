@@ -16,6 +16,9 @@
         "linux_install_java.md": "Linux中Java环境安装",
         "linux_install_python.md": "Linux中Python环境安装",
         "linux_update_kernel.md": "Linux内核升级",
+        "rocky_ipaddress.md": "Rocky9配置静态IP",
+        "rocky_os_yum.md": "Rocky9更换国内镜像源",
+
         "sysbench_info.md": "Sysbench压测工具介绍",
         "sysbench_mysql.md": "Sysbench压缩Mysql数据库",
         "sysbench_system.md": "Sysbench压测系统CPU等",
@@ -26,6 +29,11 @@
         "gitlab_gitlab_runner.md": "Gitlab Runner详解",
 
         "shell_java.md": "Java启停脚本",
+
+        "mysql_binary_install.md": "二进制安装Mysql",
+        "mysql_yum_install.md": "Yum安装Mysql",
+        "mysql_container_install.md": "容器安装Mysql",
+        "mysql_master_slave_install.md": "Mysql主从配置",
 
         "redis_database_script.md": "Redis数据快速写入脚本",
         "redis_install.md": "Redis源码安装",
